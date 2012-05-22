@@ -2,6 +2,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: bookclub
+  host: 127.0.0.1
   pool: 5
   username: pablo
   password: pableras
@@ -16,7 +17,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: wlikhejjwt
+  host: ec2-107-22-176-13.compute-1.amazonaws.com
   pool: 5
-  timeout: 5000
+  username: wlikhejjwt
+  password: A3OKI1OSUIS5xxXvW66u
