@@ -8,6 +8,12 @@ gem 'rails', '3.1.1'
 #gem 'mysql2', '~> 0.3.11'
 gem 'pg'
 #gem 'psych'
+gem 'haml'
+
+# Authentication
+gem 'devise'
+gem 'omniauth-facebook'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,6 +39,10 @@ gem 'capistrano'
 group :development do
   # To use debugger
   gem 'ruby-debug19', :require => 'ruby-debug'
+
+  # Installed  when converting ERB to HAMLto SLIM
+  gem 'hpricot'
+  gem 'ruby_parser'
 
 end
 

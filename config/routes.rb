@@ -1,4 +1,12 @@
 Bookclub::Application.routes.draw do
+  # Facebook, in this case
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  # Authentication
+  devise_for :users
+
+  root :to => "home#index"
+
   resources :books
 
   # The priority is based upon order of creation:
