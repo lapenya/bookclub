@@ -24,7 +24,7 @@
             %a.load{:href => '#', :nofollow => true} paula y selu
 
       %li
-        %a.load{:href => '#', :nofollow => true} de vosotros y nosotros
+        %a.parent.load{:href => '#', :nofollow => true} de vosotros y nosotros
 
       %li
         %a.parent{:href => '#', :nofollow => true} info
@@ -37,10 +37,22 @@
             %a.load{:href => '#', :nofollow => true} testimonios
 
       %li
-        %a.load{:href => '#', :nofollow => true} colaboradores
+        %a.parent.load{:href => '#', :nofollow => true} colaboradores
 
       %li
-        %a.load{:href => '#', :nofollow => true} area clientes
+        %a#link_area_clientes.load{:href => '#', :nofollow => true} area clientes
+
+  %p
+    %a{:class => 'Boton blog', :href => "http://lemariagecreatif.tumblr.com", :target => "_blank"}
+      = 'visita nuestro blog'
+
+  %p
+    %script
+      function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=124,height=14');return false;}
+
+  %p
+    %a{:href =>"http://www.facebook.com/sharer.php?u=www.lemariagecreatif.com", :onclick => "return fbs_click()", :target => "_blank"}
+      = 'cuentaselo a todos'
 
 #content
 
