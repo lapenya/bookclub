@@ -13,6 +13,7 @@ gem 'haml'
 # Authentication
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'aws-s3'
 
 
 # Gems used only for assets and not required

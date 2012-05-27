@@ -5,3 +5,5 @@ tmp/
 .sass-cache/
 .idea/
 
+config/amazon_s3.yml
+

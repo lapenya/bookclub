@@ -9,6 +9,9 @@ Bookclub::Application.routes.draw do
 
   resources :books
 
+  match '/marriages/load' => "marriages#load"
+  resources :marriages
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
