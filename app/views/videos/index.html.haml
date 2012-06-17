@@ -25,7 +25,8 @@
     - @videos.each do |video|
       %tr
         %td= video.name
-        %td= video.url
+        %td
+          %a{:href => video.url, :target => '_blank'}= video.url
         %td= video.views
         %td= distance_of_time_in_words_to_now video.created_at
         %td
