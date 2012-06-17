@@ -8,9 +8,13 @@ class InterMailer < ActionMailer::Base
     mail(to: player.email, subject: game.subject)
   end
 
-  def invite_response(game, player)
+  def invite_response(game, player, response)
     @game = game
-    mail(to: 'pablo.molinacandel@gmail.com', subject: "#{player.name} no viene al partido del día #{game.daytime.day}")
+    subject = player.name
+    subject += " NO" unless response
+    subject += " viene al partido del día #{game.daytime.day}"
+
+    mail(to: 'pablo.molinacandel@gmail.com', subject: subject)
   end
 
 end
