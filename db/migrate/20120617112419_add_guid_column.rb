@@ -1,10 +1,11 @@
 class AddGuidColumn < ActiveRecord::Migration
   def up
-    change_column :videos, :views, null: false, default: 0
-    Video.update_all(['views = ?', 0])
+    change_table :videos do |t|
+      t.string :guid
+    end
   end
 
   def down
-    change_column :videos, :views
+    remove_column :videos, :guid
   end
 end
