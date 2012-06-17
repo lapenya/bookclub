@@ -17,6 +17,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
 
     if request.xhr?
+      @video.views ||= 1
       @video.views += 1
       @video.save!
     end
