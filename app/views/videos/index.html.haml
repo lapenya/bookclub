@@ -1,0 +1,12 @@
+%h1 Videos
+
+%br/
+
+%span.hidden#videos_url{:'data-url' => videos_url}
+
+#map_canvas.map.rounded
+
+#dialog{style: 'display: none'}
+  = render 'form', layout: false
+
+#marker_content.hidden

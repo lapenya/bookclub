@@ -15,18 +15,6 @@
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to 'Bookclub', books_path, class: 'brand'
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to('Logout', destroy_user_session_path, :method => :delete)
-          / /.nav-collapse
     .container
       - if notice
         .notice= notice

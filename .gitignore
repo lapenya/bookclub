@@ -4,6 +4,7 @@ log/*.log
 tmp/
 .sass-cache/
 .idea/
+.DS_Store
 
 config/amazon_s3.yml
 
