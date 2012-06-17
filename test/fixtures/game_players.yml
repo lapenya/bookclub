@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  response: false
+  game: 
+  player: 
+
+two:
+  response: false
+  game: 
+  player: 

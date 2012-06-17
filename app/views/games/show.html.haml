@@ -1,0 +1,15 @@
+%p#notice= notice
+%p
+  %b= @game.subject
+%p
+  %b Contra
+  %b= @game.rival
+
+%h1= "#{@confirmed.count} confirmado(s):"
+%ol
+  - @confirmed.each do |player|
+    %li= player.name
+
+= link_to 'Edit', edit_game_path(@game)
+|
+\#{link_to 'Back', games_path}

@@ -1,4 +1,6 @@
 Bookclub::Application.routes.draw do
+  resources :cosicas
+
   resources :videos
 
   # Facebook, in this case
@@ -10,6 +12,10 @@ Bookclub::Application.routes.draw do
   root :to => "videos#index"
 
   resources :books
+
+  match '/rsvp/update' => "rsvp#update", as: :rsvp_update
+  match '/games/:game/send_mailer' => "games#send_mailer", as: :game_send_mailer
+  resources :games
 
   match '/marriages/load' => "marriages#load"
   resources :marriages

@@ -1,0 +1,10 @@
+- if @gp.response
+  %h1 Ok, ahí nos vemos
+  %h1= @game.subject
+- else
+  %h1 Bueno, te esperamos en el próximo
+
+%h1= "#{@confirmed.count} confirmado(s):"
+%ol
+  - @confirmed.each do |player|
+    %li= player.name

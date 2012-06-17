@@ -1,0 +1,10 @@
+%h1= "Hey #{@player.name},"
+%h1= @game.invite_text
+%h1= "Jugamos contra #{@game.rival}"
+
+= form_for :response do |f|
+  %input.hidden{name: 'partidico', value: @game.id}
+  %input.hidden{name: 'personaje', value: @player.id}
+  .form-actions
+    = f.submit 'Si', :class => 'btn btn-primary'
+    = f.submit 'No', :class => 'btn btn-primary'
