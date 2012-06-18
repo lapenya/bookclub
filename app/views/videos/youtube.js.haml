@@ -1,12 +1,11 @@
--#%object{ width: "384", height: "290", type: "application/x-shockwave-flash", data: "http://www.youtube.com/v/#{@video.guid}&fs=1&rel=0"}
--#  %param{name: "movie", value: "http://www.youtube.com/v/#{@video.guid}&fs=1&rel=0"}
+-#%object{:classid => "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000", :height => 200, :width => 384}
+-#  %param{:name => "movie", :value => "http://www.youtube.com/v/#{@video.guid}&fs=1&rel=0"}
+-#  %param{:name => "allowFullscreen", :value => "true"}
+-#  %param{:name => "allowscriptaccess", :value => "always"}
+-#  %param{:name => "wmode", :value => "opaque"}
+-#  %embed{:allowfullscreen => "true", :allowscriptaccess => "always", :height => 200,
+-#          :src => "http://www.youtube.com/v/#{@video.guid}&fs=1&rel=0", :type => "application/x-shockwave-flash",
+-#          :width => 384, :wmode => "opaque"}
 
-%object{:classid => "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000", :height => 200, :width => 384}
-  %param{:name => "movie", :value => "http://www.youtube.com/v/#{@video.guid}&fs=1&rel=0"}
-  %param{:name => "allowFullscreen", :value => "true"}
-  %param{:name => "allowscriptaccess", :value => "always"}
-  %param{:name => "wmode", :value => "opaque"}
-  %embed{:allowfullscreen => "true", :allowscriptaccess => "always", :height => 200,
-          :src => "http://www.youtube.com/v/#{@video.guid}&fs=1&rel=0", :type => "application/x-shockwave-flash",
-          :width => 384, :wmode => "opaque"}
-
+%iframe{:class => 'youtube-player', :type => 'text/html', :width => 384, :height => 200,
+        :src => "http://www.youtube.com/embed/#{@video.guid}", :frameborder => 0}
