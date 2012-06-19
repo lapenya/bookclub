@@ -34,9 +34,10 @@ $("#map_canvas").gmap().bind "init", (event, map) ->
         position: new google.maps.LatLng(marker.latitude, marker.longitude)
         bounds: true
       ).click ->
-        $('#marker_content').load $('#videos_url').data('url') + '/' + marker.id + '.js'
+        #$('#marker_content').load $('#videos_url').data('url') + '/' + marker.id + '.js'
+        content = $('#marker_content').html().replace('guid', marker.guid)
         $("#map_canvas").gmap "openInfoWindow",
-          content: $('#marker_content').html()
+          content: content
         , this
 
   # Set market on click
