@@ -59,9 +59,7 @@ $("#map_canvas").gmap({'disableDefaultUI':true}).bind "init", (event, map) ->
     ).click ->
       openDialog this
 
-  #setTimeout("$('#map_canvas').gmap('set', 'MarkerClusterer', new MarkerClusterer($('#map_canvas').gmap('get', 'map'), $('#map_canvas').gmap('get', 'markers')))", 700)
+  setTimeout("$('#map_canvas').gmap('set', 'MarkerClusterer', new MarkerClusterer($('#map_canvas').gmap('get', 'map'), $('#map_canvas').gmap('get', 'markers')))", 1000)
 
-$(window).load ->
-  $('#map_canvas').gmap('set', 'MarkerClusterer', new MarkerClusterer($('#map_canvas').gmap('get', 'map'), $('#map_canvas').gmap('get', 'markers')))
 
 
