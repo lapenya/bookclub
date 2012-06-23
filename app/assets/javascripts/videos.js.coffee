@@ -3,7 +3,6 @@ findLocation = (location, marker) ->
     location: location
   , (results, status) ->
     if status is "OK"
-      console.log results
       $.each results[0].address_components, (i, v) ->
         if v.types[0] is "administrative_area_level_1" or v.types[0] is "administrative_area_level_2"
           $("#video_state").val v.long_name
