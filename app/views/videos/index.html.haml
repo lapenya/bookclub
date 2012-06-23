@@ -10,32 +10,7 @@
   = render 'form', layout: false
 
 #marker_content.hidden
-  %iframe{:class => 'youtube-player', :type => 'text/html', :width => 384, :height => 200,
-        :src => "http://www.youtube.com/embed/guid", :frameborder => 0}
-
-%br/
-%h1 Los más vistos
-- if @videos.present?
-  - model_class = Video.new.class
-  %table.table.table-striped
-    %thead
-      %tr
-        %th= model_class.human_attribute_name(:name)
-        %th= model_class.human_attribute_name(:url)
-        %th= model_class.human_attribute_name(:views)
-        %th= model_class.human_attribute_name(:created_at)
-    %tbody
-      - @videos.each do |video|
-        %tr
-          %td= video.name
-          %td
-            %a{:href => video.url, :target => '_blank'}= video.url
-          %td= video.views
-          %td= distance_of_time_in_words_to_now video.created_at
-          %td
-            = link_to 'Eliminar',
-              video_path(video),
-              :method => :delete,
-              :confirm => t('.confirm', :default => 'Seguro?'),
-              :class => 'btn btn-mini btn-danger'
+  /
+    %iframe{:class => 'youtube-player', :type => 'text/html', :width => 384, :height => 200,
+          :src => "http://www.youtube.com/embed/guid", :frameborder => 0}
 
