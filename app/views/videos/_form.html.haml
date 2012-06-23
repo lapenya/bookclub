@@ -9,13 +9,25 @@
           %li= msg
 
   .field
-    = f.label :name
+    = f.label :nombre
     %br/
     = f.text_field :name
   .field
-    = f.label :url
+    = f.label 'Youtube URL'
     %br/
     = f.text_field :url
+  .field
+    = f.label :dirección
+    %br/
+    = f.text_field :address, :readonly => true
+  .field
+    = f.label :región
+    %br/
+    = f.text_field :state, :readonly => true
+  .field
+    = f.label :país
+    %br/
+    = f.text_field :country, :readonly => true
 
   .field.hidden
     = f.text_field :latitude

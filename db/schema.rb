@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617161400) do
+ActiveRecord::Schema.define(:version => 20120623093916) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -77,6 +77,9 @@ ActiveRecord::Schema.define(:version => 20120617161400) do
     t.string   "longitude"
     t.string   "content"
     t.string   "guid"
+    t.string   "state"
+    t.string   "country"
+    t.string   "address"
   end
 
 end

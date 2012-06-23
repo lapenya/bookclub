@@ -3,36 +3,42 @@ findLocation = (location, marker) ->
     location: location
   , (results, status) ->
     if status is "OK"
+      console.log results
       $.each results[0].address_components, (i, v) ->
         if v.types[0] is "administrative_area_level_1" or v.types[0] is "administrative_area_level_2"
-          $("#state" + marker.__gm_id).val v.long_name
-        else $("#country" + marker.__gm_id).val v.long_name  if v.types[0] is "country"
+          $("#video_state").val v.long_name
+        else $("#video_country").val v.long_name  if v.types[0] is "country"
 
       marker.setTitle results[0].formatted_address
-      $("#address" + marker.__gm_id).val results[0].formatted_address
-      openDialog marker
+      $("#video_address").val results[0].formatted_address
+    openDialog marker
 
 openDialog = (marker) ->
   $("#dialog").dialog
     modal: true
-    title: "Edit and save point"
+    title: "Vídeo"
     buttons:
-      Remove: ->
+      Borrar: ->
         $(this).dialog "close"
         marker.setMap null
 
-      Save: ->
+      Guardar: ->
         $form = $(this).find('form')
-        $.post($form.attr('action'), $form.serialize())
-        $(this).dialog "close"
+        if !$form.find('#video_name').val() || !$form.find('#video_name').val()
+          alert('Introduce nombre y dirección de Youtube')
+        else
+          $.post($form.attr('action'), $form.serialize())
+          $(this).dialog "close"
 
 $("#map_canvas").gmap({'disableDefaultUI':true}).bind "init", (event, map) ->
+
   # Load markers from DB
   $.getJSON $('#videos_url').data('url') + '.json', (data) ->
     $.each data, (i, marker) ->
       $("#map_canvas").gmap("addMarker",
         position: new google.maps.LatLng(marker.latitude, marker.longitude)
         bounds: true
+        #icon: "http://mintywhite.com/images/wg/0904/05rssfeedicons/rss-feed-icons11.jpg"
       ).click ->
         content = $('#marker_content').html().replace('guid', marker.guid).replace('<!--', '').replace('-->', '')
         $("#map_canvas").gmap "openInfoWindow",
