@@ -38,7 +38,7 @@ $("#map_canvas").gmap({'disableDefaultUI':true}).bind "init", (event, map) ->
       $("#map_canvas").gmap("addMarker",
         position: new google.maps.LatLng(marker.latitude, marker.longitude)
         bounds: true
-        #icon: "http://mintywhite.com/images/wg/0904/05rssfeedicons/rss-feed-icons11.jpg"
+        icon: window.location.origin + "/assets/inter.png"
       ).click ->
         content = $('#marker_content').html().replace('guid', marker.guid).replace('<!--', '').replace('-->', '')
         $("#map_canvas").gmap "openInfoWindow",
@@ -60,7 +60,7 @@ $("#map_canvas").gmap({'disableDefaultUI':true}).bind "init", (event, map) ->
     ).click ->
       openDialog this
 
-  setTimeout("$('#map_canvas').gmap('set', 'MarkerClusterer', new MarkerClusterer($('#map_canvas').gmap('get', 'map'), $('#map_canvas').gmap('get', 'markers')))", 500)
+  setTimeout("$('#map_canvas').gmap('set', 'MarkerClusterer', new MarkerClusterer($('#map_canvas').gmap('get', 'map'), $('#map_canvas').gmap('get', 'markers')))", 700)
 
 
 
