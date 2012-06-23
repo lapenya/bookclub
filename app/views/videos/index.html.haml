@@ -1,10 +1,21 @@
-%h1 Videos
+%h1 Mapa
 
 %br/
 
 %span.hidden#videos_url{:'data-url' => videos_url}
 
 #map_canvas.map.rounded
+
+%h1 Últimos 3 vídeos
+
+#listing
+  %table{:cellpadding => 10, :cellspacing => 10}
+    %tr
+    - @videos[0..2].each do |video|
+      %td
+        %iframe{:class => 'youtube-player', :type => 'text/html', :width => 384, :height => 200,
+              :src => "http://www.youtube.com/embed/#{video.guid}", :frameborder => 0}
+
 
 #dialog{style: 'display: none'}
   = render 'form', layout: false
