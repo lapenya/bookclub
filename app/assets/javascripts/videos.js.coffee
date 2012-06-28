@@ -37,7 +37,7 @@ $("#map_canvas").gmap({'disableDefaultUI':true}).bind "init", (event, map) ->
       $("#map_canvas").gmap("addMarker",
         position: new google.maps.LatLng(marker.latitude, marker.longitude)
         bounds: true
-        icon: window.location.origin + "/assets/inter.png"
+        #icon: window.location.origin + "/assets/inter.png"
       ).click ->
         content = $('#marker_content').html().replace('guid', marker.guid).replace('<!--', '').replace('-->', '')
         $("#map_canvas").gmap "openInfoWindow",
