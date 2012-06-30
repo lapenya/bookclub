@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/37signals/mail_view.git
+  revision: 86a56c55143b3688add21ac95946c008df32c491
+  specs:
+    mail_view (1.0.1)
+      tilt
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -202,6 +209,7 @@ DEPENDENCIES
   haml
   hpricot
   jquery-rails
+  mail_view!
   omniauth-facebook
   pg
   rails (= 3.1.1)

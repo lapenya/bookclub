@@ -44,6 +44,7 @@ group :development do
   # Installed  when converting ERB to HAMLto SLIM
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'mail_view', :git => 'https://github.com/37signals/mail_view.git'
 
 end
 

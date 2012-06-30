@@ -10,6 +10,9 @@ Bookclub::Application.routes.draw do
   devise_for :users
 
   root :to => "videos#index"
+  if Rails.env.development?
+    mount VideosMailer::Preview => 'mail_view'
+  end
 
   resources :books
 
