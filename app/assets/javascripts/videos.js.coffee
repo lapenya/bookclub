@@ -44,6 +44,8 @@ $("#map_canvas").gmap({'disableDefaultUI':true}).bind "init", (event, map) ->
           content: content
         , this
 
+    $('#map_canvas').gmap('set', 'MarkerClusterer', new MarkerClusterer($('#map_canvas').gmap('get', 'map'), $('#map_canvas').gmap('get', 'markers')))
+
   # Set market on click
   $(map).click (event) ->
     $("#map_canvas").gmap("addMarker",
@@ -59,7 +61,6 @@ $("#map_canvas").gmap({'disableDefaultUI':true}).bind "init", (event, map) ->
     ).click ->
       openDialog this
 
-  setTimeout("$('#map_canvas').gmap('set', 'MarkerClusterer', new MarkerClusterer($('#map_canvas').gmap('get', 'map'), $('#map_canvas').gmap('get', 'markers')))", 1000)
 
 
 
