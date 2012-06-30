@@ -37,6 +37,8 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 gem 'capistrano'
 
+gem 'mail_view', :git => 'https://github.com/37signals/mail_view.git'
+
 group :development do
   # To use debugger
   gem 'ruby-debug19', :require => 'ruby-debug'
@@ -44,7 +46,6 @@ group :development do
   # Installed  when converting ERB to HAMLto SLIM
   gem 'hpricot'
   gem 'ruby_parser'
-  gem 'mail_view', :git => 'https://github.com/37signals/mail_view.git'
 
 end
 

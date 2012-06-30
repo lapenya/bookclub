@@ -56,6 +56,7 @@ class VideosController < ApplicationController
     respond_to do |format|
       if @video.save
         VideosMailer.new_video(@video).deliver
+        render :nothing
 
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
         format.json { render json: @video, status: :created, location: @video }

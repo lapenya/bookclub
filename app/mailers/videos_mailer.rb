@@ -1,9 +1,13 @@
 # -*- encoding : utf-8 -*-
 class VideosMailer < ActionMailer::Base
 
+  DANI_EMAIL = 'danivieldv@gmail.com'
+  MI_EMAIL = 'pablo.molinacandel@gmail.com'
+  MI_EMAIL_2 = 'el.pablines@gmail.com'
+
   def new_video(video)
     @video = video
-    recipients = Rails.env.production? ? ['pablo.molinacandel@gmail.com', 'el.pablines@gmail.com'] : 'pablo.molinacandel@gmail.com'
+    recipients = Rails.env.production? ? [MI_EMAIL, MI_EMAIL_2] : MI_EMAIL
     mail(to: recipients, subject: "Nuevo vídeo en #{video.state}, #{video.country}")
   end
 
