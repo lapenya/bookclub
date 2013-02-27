@@ -1,4 +1,7 @@
 class VideosController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /videos
   # GET /videos.json
   def index
