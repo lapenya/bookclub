@@ -22,5 +22,3 @@ production:
   database: wlikhejjwt
   host: ec2-107-22-176-13.compute-1.amazonaws.com
   pool: 5
-  username: wlikhejjwt
-  password: A3OKI1OSUIS5xxXvW66u
